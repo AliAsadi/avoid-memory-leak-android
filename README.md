@@ -1,7 +1,9 @@
 # avoid-memory-leak-android
 
 This project is all about shows common patterns of memory leaks in Android development and how to fix them
- 
+
+ [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-avoid--memory--leak--android-green.svg?style=flat )]( https://android-arsenal.com/details/1/6887 )
+
 #### How we can cause a leak when we use ?
 
 * [AsyncTask](https://github.com/AliEsaAssadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliesaassadi/memoryleak/AsyncTask)
