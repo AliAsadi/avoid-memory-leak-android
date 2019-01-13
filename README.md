@@ -109,7 +109,9 @@ public Integer noKeyAutoBoxing(){
 	SparseArray<String> sparseArray = new SparseArray<>();
 	sparseArray.put(5,"Hi Android Academy");
 }
+```
 
+```Java
 public Integer noValueAutoBoxing(){
 	SparseIntArray sparseArray = new SparseIntArray();
 	sparseArray.put(5,1000);
@@ -121,6 +123,6 @@ public Integer noValueAutoBoxing(){
 * [LeakCanary](https://github.com/square/leakcanary) from Square is a good tool for detecting memory leaks in your app 
 
 <p align="center">
-<img src="https://github.com/square/leakcanary/blob/master/assets/screenshot.png"/>
+<img src="https://i.imgur.com/dKAqQC5.jpg"/>
 </p>
 
