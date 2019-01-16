@@ -43,39 +43,42 @@ private class CountDownHandler extends Handler {
 }
 ```
 
-4. Avoid non-static inner classes
+4. Avoid non-static inner classes using WeakReference.
 
 ```Java
 private static class CountDownHandler extends Handler {
-	private final WeakReference<DialogCountdown> mDialogCountdownWeakReference;
-	public CountDownHandler(DialogCountdown dialogCountdown) {
-	super();
-	mDialogCountdownWeakReference = new WeakReference<>(dialogCountdown);
-	}
-	public void handleMessage(Message msg) {
-	if(mDialogCountdownWeakReference.get()!=null) {
-	mDialogCountdownWeakReference.get().onCountDown();
-     }
-   }
+    private final WeakReference<DialogCountdown> mDialogCountdownWeakReference;
+
+    public CountDownHandler(DialogCountdown dialogCountdown) {
+        super();
+        mDialogCountdownWeakReference = new WeakReference<>(dialogCountdown);
+    }
+
+    public void handleMessage(Message msg) {
+        if (mDialogCountdownWeakReference.get() != null) {
+            mDialogCountdownWeakReference.get().onCountDown();
+        }
+    }
 }
 ```
 
-5. Clean/Stop all your handlers, animation listeners onDestroy();\
+5. Clean/Stop all your handlers, animation listeners onDestroy()/onStop().
 
 ```Java
+@Override
 protected void onStop() {
-	super.onStop();
-	mHandler.clearAllMessages();
-	unregisterReceivers();
-	heatMapsDone();
-	if (mServiceBound) {
-	mServiceBound = false;
-	Services.unbindFromRidesService(this, this);
-	}
-	if (mMapStateMachine != null) {
-	mMapStateMachine.stop();
-	mMapStateMachine = null;
-	}
+    super.onStop();
+    mHandler.clearAllMessages();
+    unregisterReceivers();
+    heatMapsDone();
+    if (mServiceBound) {
+        mServiceBound = false;
+        Services.unbindFromRidesService(this, this);
+    }
+    if (mMapStateMachine != null) {
+        mMapStateMachine.stop();
+        mMapStateMachine = null;
+    }
 }
 ```
 
