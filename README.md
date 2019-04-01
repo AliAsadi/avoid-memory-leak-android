@@ -6,8 +6,8 @@ This project is all about shows common patterns of memory leaks in Android devel
  
  # Screenshot
 <p align="center">
-<img src="https://i.imgur.com/Jyk4oJ3.png" height="600" width="300">
-<img src="https://i.imgur.com/yV0bOHS.png" height="600" width="300">
+<img src="https://i.imgur.com/M1XGg1e.png" height="600" width="300">
+<img src="https://i.imgur.com/icylNzW.png" height="600" width="300">
 </p>
 
 #### How we can cause a leak when we use ?
