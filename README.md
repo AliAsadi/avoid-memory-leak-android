@@ -4,13 +4,7 @@ This project is all about shows common patterns of memory leaks in Android devel
 
  [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-avoid--memory--leak--android-green.svg?style=flat )]( https://android-arsenal.com/details/1/6887 )
  
- # Screenshot
-<p align="center">
-<img src="https://i.imgur.com/M1XGg1e.png" height="600" width="300">
-<img src="https://i.imgur.com/icylNzW.png" height="600" width="300">
-</p>
-
-#### How we can cause a leak when we use ?
+ #### How we can cause a leak when we use ?
 
 * [AsyncTask](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliasadi/memoryleak/asynctask)
 
@@ -19,6 +13,13 @@ This project is all about shows common patterns of memory leaks in Android devel
 * [Singleton](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliasadi/memoryleak/singleton)
 
 * [Thread](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliasadi/memoryleak/thread)
+
+
+ # Screenshot
+<p align="center">
+<img src="https://i.imgur.com/M1XGg1e.png" height="600" width="300">
+<img src="https://i.imgur.com/icylNzW.png" height="600" width="300">
+</p>
 
 
 ## How To Avoid Memory Leak?
