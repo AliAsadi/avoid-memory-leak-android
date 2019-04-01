@@ -1,16 +1,15 @@
-package aliesaassadi.memoryleak.Thread;
+package aliasadi.memoryleak.thread;
 
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
 
-import aliesaassadi.memoryleak.R;
+import aliasadi.memoryleak.R;
 
 /**
- * Created by Ali Esa Assadi on 06/02/2018.
+ * Created by Ali Asadi on 06/02/2018.
  */
-public class innerThreadLeakFixed extends AppCompatActivity {
+public class InnerThreadFixed extends AppCompatActivity {
 
     private MyThread myThread = new MyThread();
 
@@ -19,7 +18,7 @@ public class innerThreadLeakFixed extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_async_task);
 
         myThread.start();
     }

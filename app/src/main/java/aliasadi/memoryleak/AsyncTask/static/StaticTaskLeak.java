@@ -1,4 +1,4 @@
-package aliesaassadi.memoryleak.AsyncTask;
+package aliasadi.memoryleak.asynctask;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import aliesaassadi.memoryleak.R;
+import aliasadi.memoryleak.R;
 
 /**
- * Created by Ali Esa Assadi on 06/02/2018.
+ * Created by Ali Asadi on 06/02/2018.
  */
-public class StaticAsyncTaskLeak extends AppCompatActivity {
+public class StaticTaskLeak extends AppCompatActivity {
     private TextView textView;
 
     // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
@@ -19,7 +19,7 @@ public class StaticAsyncTaskLeak extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_async_task);
         textView = findViewById(R.id.text_view);
 
         new TaskExample(this).execute();
@@ -33,7 +33,7 @@ public class StaticAsyncTaskLeak extends AppCompatActivity {
 
         // this can lead a memory leak
 
-        private StaticAsyncTaskLeak activity;
+        private StaticTaskLeak activity;
 
         // This example will have memory leaks when you rotate the device or go to another activity within 20 seconds after it’s created.
         // The activity is destroyed on screen rotation, but since the AsyncTask is still holding a reference of the activity,
@@ -45,7 +45,7 @@ public class StaticAsyncTaskLeak extends AppCompatActivity {
         //Similarly, direct field references to activities and fragments from these longer running instances can cause leaks.
         //ViewModel classes should never point to Views or non-application Contexts.
 
-        public TaskExample(StaticAsyncTaskLeak activity) {
+        public TaskExample(StaticTaskLeak activity) {
             this.activity = activity;
         }
 

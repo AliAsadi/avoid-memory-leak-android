@@ -1,4 +1,4 @@
-package aliesaassadi.memoryleak.AsyncTask;
+package aliasadi.memoryleak.asynctask;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,18 +8,18 @@ import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
-import aliesaassadi.memoryleak.R;
+import aliasadi.memoryleak.R;
 
 /**
- * Created by Ali Esa Assadi on 06/02/2018.
+ * Created by Ali Asadi on 06/02/2018.
  */
-public class StaticAsyncTaskLeakFixed extends AppCompatActivity {
+public class StaticTaskFixed extends AppCompatActivity {
     private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_async_task);
         textView = findViewById(R.id.text_view);
 
         new TaskExample(this).execute();
@@ -34,7 +34,7 @@ public class StaticAsyncTaskLeakFixed extends AppCompatActivity {
 
         //FIX : The WeakReference allows the Activity to be garbage collected, so you don't have a memory leak.
         // GC dose not protect the reference from begin collection and reclaim by the GC
-        private WeakReference<StaticAsyncTaskLeakFixed> activity;
+        private WeakReference<StaticTaskFixed> activity;
 
         //MORE -> https://developer.android.com/reference/java/lang/ref/WeakReference.html
 
@@ -47,7 +47,7 @@ public class StaticAsyncTaskLeakFixed extends AppCompatActivity {
         //those newly-cleared weak references that are registered with reference queues.
 
 
-        private TaskExample(StaticAsyncTaskLeakFixed activity) {
+        private TaskExample(StaticTaskFixed activity) {
             this.activity = new WeakReference<>(activity);
         }
 

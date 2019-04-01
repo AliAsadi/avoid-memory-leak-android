@@ -1,4 +1,4 @@
-package aliasadi.memoryleak.Handler;
+package aliasadi.memoryleak.handler;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,7 +11,7 @@ import aliasadi.memoryleak.R;
 /**
  * Created by Ali Esa Assadi on 06/02/2018.
  */
-public class innerHandlerLeak extends AppCompatActivity {
+public class InnerHandlerLeak extends AppCompatActivity {
 
     /*Since this Handler is declared as an inner class, it may prevent the outer class from being garbage collected.
     If the Handler is using a Looper or MessageQueue for a thread other than the main thread, then there is no issue.
@@ -24,7 +24,7 @@ public class innerHandlerLeak extends AppCompatActivity {
     private final Handler mLeakyHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            Log.e("innerHandlerLeak", "handle message");
+            Log.e("InnerHandlerLeak", "handle message");
         }
     };
 
@@ -41,7 +41,7 @@ public class innerHandlerLeak extends AppCompatActivity {
         mLeakyHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Log.e("innerHandlerLeak", "in run()");
+                Log.e("InnerHandlerLeak", "in run()");
             }
         }, 1000 * 60 * 10);
     }

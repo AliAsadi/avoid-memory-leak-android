@@ -1,4 +1,4 @@
-package aliasadi.memoryleak.AsyncTask.AsyncTaskBestPractical;
+package aliasadi.memoryleak.asynctask;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
@@ -6,13 +6,13 @@ import android.os.SystemClock;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Ali Esa Assadi on 06/02/2018.
+ * Created by Ali Asadi on 06/02/2018.
  */
 public class TaskExample extends AsyncTask<Void, Void, Void> {
 
     //FIX : The WeakReference allows the Activity to be garbage collected, so you don't have a memory leak.
     // GC dose not protect the reference from begin collection and reclaim by the GC
-    private WeakReference<AsyncTaskBestPractical> activity;
+    private WeakReference<TaskBestPractical> activity;
 
     //MORE -> https://developer.android.com/reference/java/lang/ref/WeakReference.html
 
@@ -24,8 +24,8 @@ public class TaskExample extends AsyncTask<Void, Void, Void> {
     //all of the formerly weakly-reachable objects to be finalizable. At the same time or at some later time it will enqueue
     //those newly-cleared weak references that are registered with reference queues.
     //
-    public TaskExample(AsyncTaskBestPractical asyncTaskBestPractical) {
-        activity = new WeakReference<>(asyncTaskBestPractical);
+    public TaskExample(TaskBestPractical taskBestPractical) {
+        activity = new WeakReference<>(taskBestPractical);
     }
 
     @Override
