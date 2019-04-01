@@ -6,13 +6,13 @@ This project is all about shows common patterns of memory leaks in Android devel
 
 #### How we can cause a leak when we use ?
 
-* [AsyncTask](https://github.com/AliEsaAssadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliesaassadi/memoryleak/AsyncTask)
+* [AsyncTask](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliasadi/memoryleak/asynctask)
 
-* [Handler](https://github.com/AliEsaAssadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliesaassadi/memoryleak/Handler)
+* [Handler](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliasadi/memoryleak/handler)
 
-* [Singleton](https://github.com/AliEsaAssadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliesaassadi/memoryleak/Singleton)
+* [Singleton](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliasadi/memoryleak/singleton)
 
-* [Thread](https://github.com/AliEsaAssadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliesaassadi/memoryleak/Thread)
+* [Thread](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliasadi/memoryleak/thread)
 
 
 ## How To Avoid Memory Leak?
