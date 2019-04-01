@@ -14,6 +14,7 @@ This project is all about shows common patterns of memory leaks in Android devel
 
 * [Thread](https://github.com/AliEsaAssadi/avoid-memory-leak-android/tree/master/app/src/main/java/aliesaassadi/memoryleak/Thread)
 
+
 ## How To Avoid Memory Leak?
 
 1. Do not keep long-lived references to a context-activity
