@@ -1,15 +1,15 @@
-package aliesaassadi.memoryleak.AsyncTask.AsyncTaskBestPractical;
+package aliasadi.leak.asynctask;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import aliesaassadi.memoryleak.R;
+import aliasadi.leak.R;
 
 /**
- * Created by Ali Esa Assadi on 06/02/2018.
+ * Created by Ali Asadi on 06/02/2018.
  */
-public class AsyncTaskBestPractical extends AppCompatActivity {
+public class TaskBestPractical extends AppCompatActivity {
     private TextView textView;
     private TaskExample taskExample;
 
@@ -18,13 +18,13 @@ public class AsyncTaskBestPractical extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_async_task);
         textView = findViewById(R.id.text_view);
         taskExample = new TaskExample(this);
     }
 
     public void updateText() {
-        textView.setText("AsyncTaskBestPractical");
+        textView.setText("TaskBestPractical");
     }
 
     @Override

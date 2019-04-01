@@ -1,33 +1,25 @@
-package aliesaassadi.memoryleak.AsyncTask;
+package aliasadi.leak.asynctask.inner;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.TextView;
 
-import java.lang.ref.WeakReference;
-
-import aliesaassadi.memoryleak.R;
+import aliasadi.leak.R;
 
 /**
- * Created by Ali Esa Assadi on 06/02/2018.
+ * Created by Ali Asadi on 06/02/2018.
  */
-public class innerAsyncTaskLeak extends AppCompatActivity {
+public class InnerTaskFixed extends AppCompatActivity {
     private TextView textView;
-
-    // This example will have memory leaks when you rotate the device or go to another activity within 20 seconds after it’s created.
-    // The activity is destroyed on screen rotation, but since the AsyncTask is declared as non-static class,
-    // the background task is still holding a reference of the activity which made the activity not eligible
-    // for garbage collection, thus it becomes a memory leak.
 
     // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_async_task);
         textView = findViewById(R.id.text_view);
 
         new TaskExample().execute();
@@ -37,7 +29,9 @@ public class innerAsyncTaskLeak extends AppCompatActivity {
         textView.setText("INNER CLASS LEAK = DONE");
     }
 
-    private class TaskExample extends AsyncTask<Void, Void, Void> {
+    // FIXED : use static class instead of inner class. Static class does not have reference to the
+    // containing activity class
+    private static class TaskExample extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -49,7 +43,12 @@ public class innerAsyncTaskLeak extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             try {
-                updateText();
+                // problem :
+                // we still need a reference to activity or listener to run the updateText() method
+                // what should i do ???
+                // go to the next example -> (StaticTaskLeak) Class to learn how to fix this and made another leak
+
+                /**updateText();**/
             } catch (Exception e) {
                 e.printStackTrace();
             }
