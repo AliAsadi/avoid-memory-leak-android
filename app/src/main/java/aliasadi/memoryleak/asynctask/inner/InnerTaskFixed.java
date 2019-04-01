@@ -1,9 +1,12 @@
 package aliasadi.memoryleak.asynctask.inner;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+
 import android.widget.TextView;
 
 import aliasadi.memoryleak.R;
@@ -11,7 +14,7 @@ import aliasadi.memoryleak.R;
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class InnerTaskFixed extends AppCompatActivity {
+public class InnerTaskFixed extends Activity {
     private TextView textView;
 
     // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
@@ -23,6 +26,11 @@ public class InnerTaskFixed extends AppCompatActivity {
         textView = findViewById(R.id.text_view);
 
         new TaskExample().execute();
+    }
+
+    public static void start(Context context) {
+        Intent starter = new Intent(context, InnerTaskFixed.class);
+        context.startActivity(starter);
     }
 
     public void updateText() {

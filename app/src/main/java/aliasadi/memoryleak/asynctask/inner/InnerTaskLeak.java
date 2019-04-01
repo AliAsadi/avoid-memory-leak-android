@@ -1,17 +1,18 @@
 package aliasadi.memoryleak.asynctask.inner;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-
 import aliasadi.memoryleak.R;
 
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class InnerTaskLeak extends AppCompatActivity {
+public class InnerTaskLeak extends Activity {
     private TextView textView;
 
     // This example will have memory leaks when you rotate the device or go to another activity within 20 seconds after it’s created.
@@ -20,6 +21,12 @@ public class InnerTaskLeak extends AppCompatActivity {
     // for garbage collection, thus it becomes a memory leak.
 
     // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
+
+
+    public static void start(Context context) {
+        Intent starter = new Intent(context, InnerTaskLeak.class);
+        context.startActivity(starter);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

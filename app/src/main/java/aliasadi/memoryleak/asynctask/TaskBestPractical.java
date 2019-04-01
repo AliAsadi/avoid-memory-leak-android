@@ -1,7 +1,8 @@
 package aliasadi.memoryleak.asynctask;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 import android.widget.TextView;
 
 import aliasadi.memoryleak.R;
@@ -9,7 +10,7 @@ import aliasadi.memoryleak.R;
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class TaskBestPractical extends AppCompatActivity {
+public class TaskBestPractical extends Activity {
     private TextView textView;
     private TaskExample taskExample;
 

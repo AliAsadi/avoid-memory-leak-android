@@ -1,15 +1,18 @@
 package aliasadi.memoryleak.thread;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+
 
 import aliasadi.memoryleak.R;
 
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class InnerThreadLeak extends AppCompatActivity {
+public class InnerThreadLeak extends Activity {
 
     // This example will have memory leaks when you rotate the device or go to another activity within 20 seconds after it’s created.
     // The activity is destroyed on screen rotation, but since the AsyncTask is declared as non-static class,
@@ -24,6 +27,11 @@ public class InnerThreadLeak extends AppCompatActivity {
         setContentView(R.layout.activity_async_task);
 
         new MyThread().start();
+    }
+
+    public static void start(Context context) {
+        Intent starter = new Intent(context, InnerThreadLeak.class);
+        context.startActivity(starter);
     }
 
     // FIXME: non-static anonymous classes hold an implicit reference to their enclosing class.

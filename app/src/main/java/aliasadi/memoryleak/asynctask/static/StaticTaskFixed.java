@@ -1,9 +1,12 @@
 package aliasadi.memoryleak.asynctask;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
@@ -13,7 +16,7 @@ import aliasadi.memoryleak.R;
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class StaticTaskFixed extends AppCompatActivity {
+public class StaticTaskFixed extends Activity {
     private TextView textView;
 
     @Override
@@ -29,6 +32,10 @@ public class StaticTaskFixed extends AppCompatActivity {
         textView.setText("INNER STATIC CLASS LEAK = DONE");
     }
 
+    public static void start(Context context) {
+        Intent starter = new Intent(context, StaticTaskFixed.class);
+        context.startActivity(starter);
+    }
 
     private static class TaskExample extends AsyncTask<Void, Void, Void> {
 

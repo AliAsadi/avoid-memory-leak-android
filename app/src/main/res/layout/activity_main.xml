@@ -1,31 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:padding="20dp">
+
+
+
 
     <TextView
-        android:id="@+id/text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Leak!"
+        android:textColor="#DF1313" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/asyncTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask"
+        android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/activity"
-        android:layout_width="wrap_content"
+        android:id="@+id/staticAsyncTask"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="82dp" />
+        android:text="Static AsyncTask"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thread"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/singleton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Singleton"
+        android:textAllCaps="false" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Fixed "
+        android:textColor="#37AA48" />
+
+    <Button
+        android:id="@+id/asyncTaskFixed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/staticAsyncTaskFixed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Static AsyncTask"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/threadFixed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thread"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/handlerFixed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/singletonFixed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Singleton"
+        android:textAllCaps="false" />
+
 
 </LinearLayout>
