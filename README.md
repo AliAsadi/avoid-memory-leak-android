@@ -3,6 +3,12 @@
 This project is all about shows common patterns of memory leaks in Android development and how to fix them
 
  [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-avoid--memory--leak--android-green.svg?style=flat )]( https://android-arsenal.com/details/1/6887 )
+ 
+ # Screenshot
+<p align="center">
+<img src="https://i.imgur.com/Jyk4oJ3.png" height="600" width="300">
+<img src="https://i.imgur.com/yV0bOHS.png" height="600" width="300">
+</p>
 
 #### How we can cause a leak when we use ?
 
