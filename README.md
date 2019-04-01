@@ -17,9 +17,9 @@ This project is all about shows common patterns of memory leaks in Android devel
 
  ## Screenshot
 <p align="center">
-<img src="https://i.imgur.com/M1XGg1e.png" height="600" width="300">
-<img src="https://i.imgur.com/2b31zYY.png" height="600" width="300">
-<img src="https://i.imgur.com/icylNzW.png" height="600" width="300">
+<img src="https://i.imgur.com/M1XGg1e.png" height="500" width="270">
+<img src="https://i.imgur.com/2b31zYY.png" height="500" width="270">
+<img src="https://i.imgur.com/icylNzW.png" height="500" width="270">
 </p>
 
 
