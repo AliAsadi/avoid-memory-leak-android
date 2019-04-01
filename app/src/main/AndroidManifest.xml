@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="aliesaassadi.memoryleak">
+    package="aliasadi.memoryleak">
 
     <application
         android:allowBackup="true"
@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AsyncTask.AsyncTaskBestPractical.AsyncTaskBestPractical" />
-        <activity android:name=".AsyncTask.innerAsyncTaskLeakFixed" />
-        <activity android:name=".AsyncTask.innerAsyncTaskLeak" />
-        <activity android:name=".AsyncTask.StaticAsyncTaskLeak" />
-        <activity android:name=".AsyncTask.StaticAsyncTaskLeakFixed" />
-        <activity android:name=".Thread.innerThreadLeak" />
-        <activity android:name=".Thread.innerThreadLeakFixed" />
-        <activity android:name=".Handler.innerHandlerLeakFixed" />
-        <activity android:name=".Singleton.ActivitySingletonLeak" />
+        <activity android:name="aliasadi.memoryleak.AsyncTask.AsyncTaskBestPractical.AsyncTaskBestPractical" />
+        <activity android:name="aliasadi.memoryleak.AsyncTask.innerAsyncTaskLeakFixed" />
+        <activity android:name="aliasadi.memoryleak.AsyncTask.innerAsyncTaskLeak" />
+        <activity android:name="aliasadi.memoryleak.AsyncTask.StaticAsyncTaskLeak" />
+        <activity android:name="aliasadi.memoryleak.AsyncTask.StaticAsyncTaskLeakFixed" />
+        <activity android:name="aliasadi.memoryleak.Thread.innerThreadLeak" />
+        <activity android:name="aliasadi.memoryleak.Thread.innerThreadLeakFixed" />
+        <activity android:name="aliasadi.memoryleak.Handler.innerHandlerLeakFixed" />
+        <activity android:name="aliasadi.memoryleak.Singleton.ActivitySingletonLeak" />
     </application>
 
 </manifest>
