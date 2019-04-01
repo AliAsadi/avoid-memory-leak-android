@@ -1,4 +1,4 @@
-package aliasadi.leak.singleton;
+package aliasadi.memoryleaks.singleton;
 
 import android.content.Context;
 

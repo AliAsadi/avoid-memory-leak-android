@@ -1,10 +1,10 @@
-package aliasadi.leak.thread;
+package aliasadi.memoryleaks.thread;
 
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 
-import aliasadi.leak.R;
+import aliasadi.memoryleaks.R;
 
 /**
  * Created by Ali Asadi on 06/02/2018.

@@ -1,9 +1,9 @@
-package aliasadi.leak.singleton;
+package aliasadi.memoryleaks.singleton;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import aliasadi.leak.R;
+import aliasadi.memoryleaks.R;
 
 /**
  * Created by Ali Asadi on 06/02/2018.

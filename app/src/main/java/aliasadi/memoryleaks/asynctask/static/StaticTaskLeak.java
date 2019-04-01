@@ -1,4 +1,4 @@
-package aliasadi.leak.asynctask;
+package aliasadi.memoryleaks.asynctask;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import aliasadi.leak.R;
+import aliasadi.memoryleaks.R;
 
 /**
  * Created by Ali Asadi on 06/02/2018.

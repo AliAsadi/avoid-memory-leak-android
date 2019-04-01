@@ -1,4 +1,4 @@
-package aliasadi.leak.asynctask;
+package aliasadi.memoryleaks.asynctask;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
