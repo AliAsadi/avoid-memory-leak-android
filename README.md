@@ -28,9 +28,10 @@ This project is all about shows common patterns of memory leaks in Android devel
 1. Do not keep long-lived references to a context-activity
 
 ```Java
-public static Context mContext;
-	public NoLifeCycleClass(Activity myActivity) {
-	mContext = (Context) myActivity;
+public static Context context;
+
+public SampleClass(Activity activity) {
+    context = (Context) activity;
 }
 ```
 
@@ -44,28 +45,28 @@ StringUtilsUI.doSomeLongRunningTask(getApplicationContext());
 3. Avoid non-static inner classes
 
 ```Java
-public class DialogCountdown extends BaseDialogFragment {
+public class Dialog extends DialogFragment {
 
-private class CountDownHandler extends Handler {
-	//do some work
-  }
+    private class MessageHandler extends Handler {
+        //do some work
+    }
 }
 ```
 
 4. Avoid non-static inner classes using WeakReference.
 
 ```Java
-private static class CountDownHandler extends Handler {
-    private final WeakReference<DialogCountdown> mDialogCountdownWeakReference;
+private static class MessageHandler extends Handler {
+    private final WeakReference<Dialog> dialogWeakReference;
 
-    public CountDownHandler(DialogCountdown dialogCountdown) {
+    public MessageHandler(Dialog dialog) {
         super();
-        mDialogCountdownWeakReference = new WeakReference<>(dialogCountdown);
+        dialogWeakReference = new WeakReference<>(dialog);
     }
 
     public void handleMessage(Message msg) {
-        if (mDialogCountdownWeakReference.get() != null) {
-            mDialogCountdownWeakReference.get().onCountDown();
+        if (dialogWeakReference.get() != null) {
+            dialogWeakReference.get().doSomething();
         }
     }
 }
@@ -77,17 +78,10 @@ private static class CountDownHandler extends Handler {
 @Override
 protected void onStop() {
     super.onStop();
-    mHandler.clearAllMessages();
+    handler.clearAllMessages();
     unregisterReceivers();
-    heatMapsDone();
-    if (mServiceBound) {
-        mServiceBound = false;
-        Services.unbindFromRidesService(this, this);
-    }
-    if (mMapStateMachine != null) {
-        mMapStateMachine.stop();
-        mMapStateMachine = null;
-    }
+    view = null;
+    listener = null;
 }
 ```
 
