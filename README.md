@@ -75,7 +75,6 @@ private static class MessageHandler extends Handler {
 5. Clean/Stop all your handlers, animation listeners onDestroy()/onStop().
 
 ```Java
-@Override
 protected void onStop() {
     super.onStop();
     handler.clearAllMessages();
@@ -89,15 +88,15 @@ protected void onStop() {
 
 ```Java
 public Integer exampleAutoBoxing(){
-	int a = 5;
-	Integer result = a * a;
-	return result;
+    int a = 5;
+    Integer result = a * a;
+    return result;
 }
 ```
 
 ```Java
 public Integer hiddenAutoBoxing(){
-	return 5;
+    return 5;
 }
 ```
 
@@ -105,22 +104,22 @@ public Integer hiddenAutoBoxing(){
 
 ```Java
 public Integer hiddenAutoBoxing(){
-	HashMap<Integer, String> hashMap = new HashMap<>();
-	hashMap.put(5,"Hi Android Academy");
+    HashMap<Integer, String> hashMap = new HashMap<>();
+    hashMap.put(5,"Hi Android Academy");
 }
 ```
 
 ```Java
 public Integer noKeyAutoBoxing(){
-	SparseArray<String> sparseArray = new SparseArray<>();
-	sparseArray.put(5,"Hi Android Academy");
+    SparseArray<String> sparseArray = new SparseArray<>();
+    sparseArray.put(5,"Hi Android Academy");
 }
 ```
 
 ```Java
 public Integer noValueAutoBoxing(){
-	SparseIntArray sparseArray = new SparseIntArray();
-	sparseArray.put(5,1000);
+    SparseIntArray sparseArray = new SparseIntArray();
+    sparseArray.put(5,1000);
 }
 ```
 
