@@ -128,6 +128,5 @@ public Integer noValueAutoBoxing(){
 * [LeakCanary](https://github.com/square/leakcanary) from Square is a good tool for detecting memory leaks in your app 
 
 <p align="center">
-<img src="https://i.imgur.com/dKAqQC5.jpg"/>
+<img src="https://github.com/square/leakcanary/wiki/assets/screenshot-2.0.png"/>
 </p>
-
