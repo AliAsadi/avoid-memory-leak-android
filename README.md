@@ -151,11 +151,11 @@ public Integer noValueAutoBoxing(){
 * [LeakCanary](https://github.com/square/leakcanary) from Square is a good tool for detecting memory leaks in your app 
 
 <p align="center">
-<img src="https://github.com/square/leakcanary/wiki/assets/screenshot-2.0.png"/>
+<img src="https://github.com/AliAsadi/avoid-memory-leak-android/blob/master/screenshot/leakcanary.png"/>
 </p>
 
 * [Profiler](https://developer.android.com/studio/profile/android-profiler) View the Java heap and memory allocations with Memory Profiler
 
 <p align="center">
-<img src="https://developer.android.com/studio/images/profile/memory-profiler-allocations-detail_2x.png"/>
+<img src="https://github.com/AliAsadi/avoid-memory-leak-android/blob/master/screenshot/profiler.png"/>
 </p>
