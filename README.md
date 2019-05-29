@@ -7,9 +7,12 @@ This project is all about shows common patterns of memory leaks in Android devel
   #### How we can cause a leak when we use AsyncTask, Handler, Singleton, Thread?
   
   There is 2 seperated modules:
-  1. leak-app: describe and shows how to cause a leak - [Click Here](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/leak-app/src/main/java/aliasadi/memoryleak/leak) 
+  
+  1. [leak-app ](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/leak-app/src/main/java/aliasadi/memoryleak/leak)-> describe and shows how to cause a leak
 
-2. fixed-app: describe and shows how to avoid/fix the leak [Click Here](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/fixed-app/src/main/java/aliasadi/memoryleak/fixed)
+
+ 2. [fixed-app ](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/fixed-app/src/main/java/aliasadi/memoryleak/fixed)-> describe and shows how to avoid/fix the leak 
+
 
  ## Screenshot
 <p align="center">
