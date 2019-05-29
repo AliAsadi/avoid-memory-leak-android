@@ -39,7 +39,8 @@ public SampleClass(Activity activity) {
 2. Try using the context-application instead of a context-activity
 
 ```Java
-StringUtilsUI.doSomeLongRunningTask(getApplicationContext());
+Utils.doSomeLongRunningTask(getApplicationContext());
+SingletoneManager.getInstance(getApplicationContext());
 ```
 
 3. Avoid non-static inner classes
@@ -48,25 +49,25 @@ StringUtilsUI.doSomeLongRunningTask(getApplicationContext());
 public class Dialog extends DialogFragment {
 
     private class MessageHandler extends Handler {
-        //do some work
+        //do some work 
     }
 }
 ```
 
-4. Avoid non-static inner classes using WeakReference.
+4. Avoid strong reference use WeakReference for listeners.
 
 ```Java
 private static class MessageHandler extends Handler {
-    private final WeakReference<Dialog> dialogWeakReference;
+    private final WeakReference<Listener> listener;
 
-    public MessageHandler(Dialog dialog) {
+    public MessageHandler(Listener listener) {
         super();
-        dialogWeakReference = new WeakReference<>(dialog);
+        listener = new WeakReference<>(listener);
     }
 
     public void handleMessage(Message msg) {
-        if (dialogWeakReference.get() != null) {
-            dialogWeakReference.get().doSomething();
+        if (listener.get() != null) {
+            listener.get().doSomething();
         }
     }
 }
@@ -87,9 +88,8 @@ protected void onStop() {
 6. Avoid Auto-Boxing
 
 ```Java
-public Integer exampleAutoBoxing(){
-    int a = 5;
-    Integer result = a * a;
+public Integer autoBoxing(){
+    Integer result = 5;
     return result;
 }
 ```
@@ -99,8 +99,22 @@ public Integer hiddenAutoBoxing(){
     return 5;
 }
 ```
+#### How to avoid Auto-Boxing:
 
-7. Avoid Auto-Boxing in HashMap
+```Java
+public int autoBoxing(){
+    int result = 5;
+    return result;
+}
+```
+
+```Java
+public int hiddenAutoBoxing(){
+    return 5;
+}
+```
+
+7. Avoid Auto-Boxing in HashMap - Use SparseArray insead.
 
 ```Java
 public Integer hiddenAutoBoxing(){
@@ -109,6 +123,8 @@ public Integer hiddenAutoBoxing(){
 }
 ```
 
+#### How to avoid Auto-Boxing in HashMap:
+ 
 ```Java
 public Integer noKeyAutoBoxing(){
     SparseArray<String> sparseArray = new SparseArray<>();
