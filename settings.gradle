@@ -1,1 +1,1 @@
-include ':fixed-app', ':leakapp', ':leak-app'
+include ':fixed-app', ':leak-app'
