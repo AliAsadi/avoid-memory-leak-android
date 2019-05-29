@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import aliasadi.memoryleak.fixed.R;
-import aliasadi.memoryleak.fixed.asynctask.StaticAsyncTaskActivity;
-import aliasadi.memoryleak.fixed.asynctask.inner.AsyncTaskActivity;
-import aliasadi.memoryleak.fixed.handler.HandlerActivity;
-import aliasadi.memoryleak.fixed.singleton.SingletonActivity;
-import aliasadi.memoryleak.fixed.thread.ThreadActivity;
+import aliasadi.memoryleak.fixed.StaticAsyncTaskActivity;
+import aliasadi.memoryleak.fixed.AsyncTaskActivity;
+import aliasadi.memoryleak.fixed.HandlerActivity;
+import aliasadi.memoryleak.fixed.SingletonActivity;
+import aliasadi.memoryleak.fixed.ThreadActivity;
 
 /**
  * Created by Ali Asadi on 01/04/2019.

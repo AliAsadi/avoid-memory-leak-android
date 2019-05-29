@@ -1,4 +1,4 @@
-package aliasadi.memoryleak.fixed.asynctask.inner;
+package aliasadi.memoryleak.fixed;
 
 import android.app.Activity;
 import android.content.Context;

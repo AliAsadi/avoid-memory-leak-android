@@ -11,11 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".asynctask.bestpractic.BestAsyncTaskActivity" />
-        <activity android:name=".asynctask.inner.AsyncTaskActivity" />
-        <activity android:name=".asynctask.StaticAsyncTaskActivity" />
-        <activity android:name=".thread.ThreadActivity" />
-        <activity android:name=".handler.HandlerActivity" />
-        <activity android:name=".singleton.SingletonActivity" />
+        <activity android:name=".AsyncTaskActivity" />
+        <activity android:name=".StaticAsyncTaskActivity" />
+        <activity android:name=".ThreadActivity" />
+        <activity android:name=".HandlerActivity" />
+        <activity android:name=".SingletonActivity" />
         <activity android:name="aliasadi.memoryleak.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

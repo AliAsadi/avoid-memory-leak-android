@@ -1,4 +1,4 @@
-package aliasadi.memoryleak.fixed.singleton;
+package aliasadi.memoryleak.fixed;
 
 import android.content.Context;
 
