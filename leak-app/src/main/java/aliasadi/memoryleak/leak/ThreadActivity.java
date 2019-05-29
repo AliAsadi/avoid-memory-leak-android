@@ -13,12 +13,13 @@ import aliasadi.memoryleak.leak.R;
  */
 public class ThreadActivity extends Activity {
 
-    // This example will have memory leaks when you rotate the device or go to another activity within 20 seconds after it’s created.
-    // The activity is destroyed on screen rotation, but since the AsyncTask is declared as non-static class,
-    // the background task is still holding a reference of the activity which made the activity not eligible
-    // for garbage collection, thus it becomes a memory leak.
-
-    // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
+    /**
+     * We will have memory leaks when we rotate/close the activity within 20 seconds after it’s created.
+     * Since the AsyncTask is declared as non-static class it will hold the reference of
+     * the activity which made the activity not eligible for garbage collection.
+     *
+     * NOTE : if the task done before rotate/close the activity every thing will be ok without leak.
+     * **/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,9 @@ public class ThreadActivity extends Activity {
         context.startActivity(starter);
     }
 
-    // FIXME: non-static anonymous classes hold an implicit reference to their enclosing class.
-    // Fix is to make it static. Also, close thread in activity onDestroy() to avoid thread leak. See `InnerThreadFixed`
+    /**
+     * non-static anonymous classes hold an implicit reference to their enclosing class.
+     * **/
     private class DownloadTask extends Thread {
         @Override
         public void run() {

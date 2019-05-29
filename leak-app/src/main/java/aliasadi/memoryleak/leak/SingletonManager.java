@@ -16,6 +16,10 @@ public class SingletonManager {
 
     public synchronized static SingletonManager getInstance(Context context) {
         if (singleton == null) {
+            /**
+             * Saving the activity context. Leak!
+             * the activity will stack in the memory until the end of the application.
+             * **/
             singleton = new SingletonManager(context);
         }
         return singleton;

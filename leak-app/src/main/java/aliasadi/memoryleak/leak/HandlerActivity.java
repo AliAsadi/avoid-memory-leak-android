@@ -1,5 +1,6 @@
 package aliasadi.memoryleak.leak;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,41 +16,42 @@ import aliasadi.memoryleak.leak.R;
  */
 public class HandlerActivity extends Activity {
 
-    /*Since this Handler is declared as an inner class, it may prevent the outer class from being garbage collected.
-    If the Handler is using a Looper or MessageQueue for a thread other than the main thread, then there is no issue.
-    If the Handler is using the Looper or MessageQueue of the main thread, you need to fix your Handler declaration,
-    as follows: Declare the Handler as a static class; In the outer class, instantiate a WeakReference to the outer class
-    and pass this object to your Handler when you instantiate the Handler; Make all references to members of the outer
-    class using the WeakReference object.*/
-
-    //the handler attached to the main thread
-    private final Handler hanlder = new Handler() {
+    /**
+     * Since this Handler is declared as an inner class,
+     * it may prevent the outer class from being garbage collected.
+     *
+     * NOTE: The handler attached to the main thread
+     * **/
+    @SuppressLint("HandlerLeak")
+    private final Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            Log.e("InnerHandlerLeak", "handle message");
+            Log.e("HandlerActivity", "new message");
         }
     };
 
-    public static void start(Context context) {
-        Intent starter = new Intent(context, HandlerActivity.class);
-        context.startActivity(starter);
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello_world);
 
-        //postDelayed() Causes the Runnable r to be added to the message queue, to be run after the specified amount of time elapses.
-        //The runnable will be run on the thread to which this handler is attached.
-        //The time-base is uptimeMillis(). Time spent in deep sleep will add an additional delay to execution.
-
-        // Post a message and delay its execution for 10 minutes.
-        hanlder.postDelayed(new Runnable() {
+        /**
+         * Post a message and delay its execution for 10 minutes.
+         *
+         * that's mean post a message to the  queue, to be run after the specified amount of time elapses,
+         * The downloadTask will be run on the thread to which this handler is attached on (MainThread)
+         * **/
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Log.e("InnerHandlerLeak", "in run()");
+                Log.e("HandlerActivity", "task start");
             }
         }, 1000 * 60 * 10);
+    }
+
+    public static void start(Context context) {
+        Intent starter = new Intent(context, HandlerActivity.class);
+        context.startActivity(starter);
     }
 
 }

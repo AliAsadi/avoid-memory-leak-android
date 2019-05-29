@@ -1,5 +1,6 @@
 package aliasadi.memoryleak.leak;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +17,9 @@ import aliasadi.memoryleak.leak.R;
 public class StaticAsyncTaskActivity extends Activity {
     private TextView textView;
 
-    // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
+    /**
+     * NOTE : if the task done before rotate/close the activity every thing will be ok without leak.
+     * **/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,7 @@ public class StaticAsyncTaskActivity extends Activity {
         setContentView(R.layout.activity_hello_world);
         textView = findViewById(R.id.text_view);
 
-        new TaskExample(this).execute();
+        new DownloadTask(this).execute();
     }
 
     public static void start(Context context) {
@@ -33,26 +36,19 @@ public class StaticAsyncTaskActivity extends Activity {
     }
 
     public void updateText() {
-        textView.setText("INNER STATIC CLASS LEAK = DONE");
+        textView.setText(R.string.hello);
     }
 
-    private static class TaskExample extends AsyncTask<Void, Void, Void> {
+    private static class DownloadTask extends AsyncTask<Void, Void, Void> {
 
-        // this can lead a memory leak
-
+        /**
+         * Saving a strong reference of the activity, which made
+         * the activity not eligible for garbage collection.
+         * **/
+        @SuppressLint("StaticFieldLeak")
         private StaticAsyncTaskActivity activity;
 
-        // This example will have memory leaks when you rotate the device or go to another activity within 20 seconds after it’s created.
-        // The activity is destroyed on screen rotation, but since the AsyncTask is still holding a reference of the activity,
-        // which made the activity not eligible for garbage collection, thus it becomes a memory leak.
-
-        //Non-static inner classes have an implicit reference to their outer class. If that outer class is for example a Fragment or Activity,
-        //then this reference means that the long-running handler/loader/task will hold a reference to the activity which prevents it
-        //from getting garbage collected.
-        //Similarly, direct field references to activities and fragments from these longer running instances can cause leaks.
-        //ViewModel classes should never point to Views or non-application Contexts.
-
-        public TaskExample(StaticAsyncTaskActivity activity) {
+        public DownloadTask(StaticAsyncTaskActivity activity) {
             this.activity = activity;
         }
 
@@ -68,7 +64,7 @@ public class StaticAsyncTaskActivity extends Activity {
             try {
                 activity.updateText();
             } catch (Exception e) {
-                e.printStackTrace();
+                //doNothing
             }
         }
     }

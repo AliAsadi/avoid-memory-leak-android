@@ -19,9 +19,9 @@ public class AsyncTaskActivity extends Activity {
     private TextView textView;
 
     /**
-     * if the task done before to move to another activity
-     * or rotate the device every thing will works fine with out leak.
+     * NOTE : if the task done before rotate/close the activity every thing will be ok without leak.
      **/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -16,11 +16,6 @@ import aliasadi.memoryleak.fixed.R;
  */
 public class HandlerActivity extends Activity {
 
-    /**
-     * Since this Handler is declared as an inner class,
-     * it may prevent the outer class from being garbage collected.
-     * **/
-
     private final DownloadTask downloadTask = new DownloadTask();
 
     /**

@@ -12,27 +12,20 @@ import aliasadi.memoryleak.leak.R;
  */
 public class SingletonActivity extends Activity {
 
-    SingletonManager singletonLeak;
-
-    public static void start(Context context) {
-        Intent starter = new Intent(context, SingletonActivity.class);
-        context.startActivity(starter);
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello_world);
 
-        /**Leak - SingletonManager **/
-        //If you referenced context directly and that reference happened to be an Activity or View or any context that not application context
-        //then you would have created a memory leak.
-
-        //FIX1 : use getApplicationContext() instead of `this`
-        singletonLeak = SingletonManager.getInstance(this);
+        /**
+         * Passing a activity as a context to the singleton!
+         * take a look at @SingletonManager class.
+         * **/
+        SingletonManager.getInstance(this);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    public static void start(Context context) {
+        Intent starter = new Intent(context, SingletonActivity.class);
+        context.startActivity(starter);
     }
 }
