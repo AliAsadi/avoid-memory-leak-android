@@ -67,7 +67,7 @@ public class DownloadTask extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected Void doInBackground(Void... params) {
-       ///do some task
+       ///do some work
     }
 
     @Override
