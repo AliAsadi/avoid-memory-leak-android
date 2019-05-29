@@ -11,10 +11,13 @@ import aliasadi.memoryleak.fixed.R;
  * Created by Ali Asadi on 06/02/2018.
  */
 public class BestAsyncTaskActivity extends Activity {
+
+    /**
+     * NOTE : if the task done before rotate/close the activity every thing will be ok without leak.
+     * **/
+
     private TextView textView;
     private DownloadTask downloadTask;
-
-    // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +28,15 @@ public class BestAsyncTaskActivity extends Activity {
     }
 
     public void updateText() {
-        textView.setText("BestAsyncTaskActivity");
+        textView.setText(R.string.hello);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // FIXED: should cancel the task in activity onDestroy() then its not call the onPostExecute() method
+        /**
+         * cancel the task so it will no invoke onPostExecute().
+         * **/
         downloadTask.cancel(true);
     }
 }
