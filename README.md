@@ -153,3 +153,9 @@ public Integer noValueAutoBoxing(){
 <p align="center">
 <img src="https://github.com/square/leakcanary/wiki/assets/screenshot-2.0.png"/>
 </p>
+
+* [Profiler](https://developer.android.com/studio/profile/android-profiler) View the Java heap and memory allocations with Memory Profiler
+
+<p align="center">
+<img src="https://developer.android.com/studio/images/profile/memory-profiler-allocations-detail_2x.png"/>
+</p>
