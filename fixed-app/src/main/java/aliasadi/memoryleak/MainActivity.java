@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import aliasadi.memoryleak.fixed.R;
 import aliasadi.memoryleak.fixed.StaticAsyncTaskActivity;
 import aliasadi.memoryleak.fixed.AsyncTaskActivity;
 import aliasadi.memoryleak.fixed.HandlerActivity;
