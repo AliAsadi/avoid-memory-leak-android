@@ -20,7 +20,7 @@ public class HandlerActivity extends Activity {
 
     /**
      * The handler attached to the main thread
-     * **/
+     **/
     private final Handler handler = new TaskHandler();
 
     @Override
@@ -56,7 +56,7 @@ public class HandlerActivity extends Activity {
     /**
      * Use static class instead of inner class.
      * static class does not have reference to the containing activity
-     * **/
+     **/
     private static class DownloadTask implements Runnable {
         @Override
         public void run() {
@@ -67,7 +67,7 @@ public class HandlerActivity extends Activity {
     /**
      * Use static class instead of inner class.
      * static class does not have reference to the containing activity
-     * **/
+     **/
     private static class TaskHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {

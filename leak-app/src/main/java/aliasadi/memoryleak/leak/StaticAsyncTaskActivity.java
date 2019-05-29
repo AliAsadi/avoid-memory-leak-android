@@ -9,16 +9,14 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.widget.TextView;
 
-import aliasadi.memoryleak.leak.R;
-
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class StaticAsyncTaskActivity extends Activity {
+public class StaticAsyncTaskActivity extends Activity implements DownloadListener {
     private TextView textView;
 
     /**
-     * NOTE : if the task done before rotate/close the activity every thing will be ok without leak.
+     * NOTE : if the task done before rotate/close the listener every thing will be ok without leak.
      * **/
 
     @Override
@@ -39,17 +37,22 @@ public class StaticAsyncTaskActivity extends Activity {
         textView.setText(R.string.hello);
     }
 
+    @Override
+    public void onDownloadTaskDone() {
+        updateText();
+    }
+
     private static class DownloadTask extends AsyncTask<Void, Void, Void> {
 
         /**
-         * Saving a strong reference of the activity, which made
-         * the activity not eligible for garbage collection.
+         * Saving a strong reference of the listener, which made
+         * the listener not eligible for garbage collection.
          * **/
         @SuppressLint("StaticFieldLeak")
-        private StaticAsyncTaskActivity activity;
+        private DownloadListener listener;
 
-        public DownloadTask(StaticAsyncTaskActivity activity) {
-            this.activity = activity;
+        public DownloadTask(DownloadListener listener) {
+            this.listener = listener;
         }
 
         @Override
@@ -62,7 +65,7 @@ public class StaticAsyncTaskActivity extends Activity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             try {
-                activity.updateText();
+                listener.onDownloadTaskDone();
             } catch (Exception e) {
                 //doNothing
             }

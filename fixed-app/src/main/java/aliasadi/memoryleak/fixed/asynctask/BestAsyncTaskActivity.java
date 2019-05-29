@@ -5,16 +5,17 @@ import android.os.Bundle;
 
 import android.widget.TextView;
 
+import aliasadi.memoryleak.fixed.DownloadListener;
 import aliasadi.memoryleak.fixed.R;
 
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class BestAsyncTaskActivity extends Activity implements DownloadTask.DownloadListener {
+public class BestAsyncTaskActivity extends Activity implements DownloadListener {
 
     /**
      * NOTE : if the task done before rotate/close the activity every thing will be ok without leak.
-     * **/
+     **/
 
     private TextView textView;
     private DownloadTask downloadTask;

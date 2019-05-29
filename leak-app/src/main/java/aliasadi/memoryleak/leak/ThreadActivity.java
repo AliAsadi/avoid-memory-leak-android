@@ -36,7 +36,7 @@ public class ThreadActivity extends Activity {
 
     /**
      * non-static anonymous classes hold an implicit reference to their enclosing class.
-     * **/
+     ***/
     private class DownloadTask extends Thread {
         @Override
         public void run() {
