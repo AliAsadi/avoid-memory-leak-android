@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".asynctask.bestpractic.BestAsyncTaskActivity" />
+        <activity android:name=".asynctask.BestAsyncTaskActivity" />
         <activity android:name=".AsyncTaskActivity" />
         <activity android:name=".StaticAsyncTaskActivity" />
         <activity android:name=".ThreadActivity" />

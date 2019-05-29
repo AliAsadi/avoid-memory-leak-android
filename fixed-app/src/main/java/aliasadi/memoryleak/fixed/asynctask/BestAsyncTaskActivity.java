@@ -1,4 +1,4 @@
-package aliasadi.memoryleak.fixed.asynctask.bestpractic;
+package aliasadi.memoryleak.fixed.asynctask;
 
 import android.app.Activity;
 import android.os.Bundle;

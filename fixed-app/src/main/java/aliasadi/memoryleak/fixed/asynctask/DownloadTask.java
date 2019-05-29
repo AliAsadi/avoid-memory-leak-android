@@ -1,4 +1,4 @@
-package aliasadi.memoryleak.fixed.asynctask.bestpractic;
+package aliasadi.memoryleak.fixed.asynctask;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
