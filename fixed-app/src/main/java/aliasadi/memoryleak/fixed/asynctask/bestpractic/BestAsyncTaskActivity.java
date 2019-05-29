@@ -10,7 +10,7 @@ import aliasadi.memoryleak.fixed.R;
 /**
  * Created by Ali Asadi on 06/02/2018.
  */
-public class BestAsyncTaskActivity extends Activity {
+public class BestAsyncTaskActivity extends Activity implements DownloadTask.DownloadListener {
 
     /**
      * NOTE : if the task done before rotate/close the activity every thing will be ok without leak.
@@ -27,10 +27,6 @@ public class BestAsyncTaskActivity extends Activity {
         downloadTask = new DownloadTask(this);
     }
 
-    public void updateText() {
-        textView.setText(R.string.hello);
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -39,4 +35,14 @@ public class BestAsyncTaskActivity extends Activity {
          * **/
         downloadTask.cancel(true);
     }
+
+    @Override
+    public void onDownloadTaskDone() {
+        updateText();
+    }
+
+    public void updateText() {
+        textView.setText(R.string.hello);
+    }
+
 }
