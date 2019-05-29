@@ -3,16 +3,24 @@
 This project is all about shows common patterns of memory leaks in Android development and how to fix them
 
  [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-avoid--memory--leak--android-green.svg?style=flat )]( https://android-arsenal.com/details/1/6887 )
- 
-  #### How we can cause a leak when we use AsyncTask, Handler, Singleton, Thread?
+   
+ #### There is 2 seperated modules:  
+ <img src="https://i.ibb.co/jgMyJ3H/Screen-Shot-2019-05-29-at-17-52-56.png"/>
   
-  There is 2 seperated modules:
-  
-  1. [leak-app ](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/leak-app/src/main/java/aliasadi/memoryleak/leak)-> describe and shows how to cause a leak
 
 
- 2. [fixed-app ](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/fixed-app/src/main/java/aliasadi/memoryleak/fixed)-> describe and shows how to avoid/fix the leak 
 
+  1. [leak-app ](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/leak-app/src/main/java/aliasadi/memoryleak/leak)-> Describe and shows how to cause a leak when we use AsyncTask, Handler, Singleton, Thread.
+
+
+ 2. [fixed-app ](https://github.com/AliAsadi/avoid-memory-leak-android/tree/master/fixed-app/src/main/java/aliasadi/memoryleak/fixed)-> Describe and shows how to avoid/fix the leaks
+
+In Android Studio choose which project you want to run on the top bar.
+
+<img src="https://i.ibb.co/B4pZwYc/Screen-Shot-2019-05-29-at-17-48-53.png"/>
+
+<p align="left">
+</p>
 
  ## Screenshot
 <p align="center">
