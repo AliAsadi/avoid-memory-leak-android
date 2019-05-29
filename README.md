@@ -46,9 +46,9 @@ SingletoneManager.getInstance(getApplicationContext());
 3. Avoid non-static inner classes
 
 ```Java
-public class Dialog extends DialogFragment {
+public class MainActivity extends Activity {
 
-    private class MessageHandler extends Handler {
+    private class DownloadTask extends Thread {
         //do some work 
     }
 }
@@ -57,19 +57,27 @@ public class Dialog extends DialogFragment {
 4. Avoid strong reference use WeakReference for listeners.
 
 ```Java
-private static class MessageHandler extends Handler {
-    private final WeakReference<Listener> listener;
+public class DownloadTask extends AsyncTask<Void, Void, Void> {
 
-    public MessageHandler(Listener listener) {
-        super();
+    private WeakReference<DownloadListener> listener;
+
+    public DownloadTask(DownloadListener listener) {
         listener = new WeakReference<>(listener);
     }
 
-    public void handleMessage(Message msg) {
+    @Override
+    protected Void doInBackground(Void... params) {
+       ///do some task
+    }
+
+    @Override
+    protected void onPostExecute(Void aVoid) {
+        super.onPostExecute(aVoid);
         if (listener.get() != null) {
-            listener.get().doSomething();
+            listener.get().onDownloadTaskDone();
         }
     }
+}
 }
 ```
 
