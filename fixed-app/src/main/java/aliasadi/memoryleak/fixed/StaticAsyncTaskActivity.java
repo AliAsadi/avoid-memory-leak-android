@@ -17,6 +17,26 @@ import aliasadi.memoryleak.fixed.R;
  * Created by Ali Asadi on 06/02/2018.
  */
 public class StaticAsyncTaskActivity extends Activity {
+
+    /**
+     *
+     *  Weak Reference Description:
+     *
+     *  Weak reference objects, which do not prevent their referents from being
+     *  made finalizable, finalized, and then reclaimed.
+     *
+     *  Suppose that the garbage collector determines at a certain point in time that an
+     *  object is weakly reachable.
+     *  At that time it will atomically clear all weak references to that object and all
+     *  weak references to any other weakly-reachable
+     *  objects from which that object is reachable through a chain of strong and soft references.
+     *  At the same time it will declare all of the formerly weakly-reachable objects to be
+     *  finalizable. At the same time or at some later time it will enqueue
+     *  those newly-cleared weak references that are registered with reference queues.
+     *
+     *   MORE -> https://developer.android.com/reference/java/lang/ref/WeakReference.html
+     * **/
+
     private TextView textView;
 
     @Override
@@ -29,7 +49,7 @@ public class StaticAsyncTaskActivity extends Activity {
     }
 
     public void updateText() {
-        textView.setText("INNER STATIC CLASS LEAK = DONE");
+        textView.setText(R.string.hello);
     }
 
     public static void start(Context context) {
@@ -37,22 +57,14 @@ public class StaticAsyncTaskActivity extends Activity {
         context.startActivity(starter);
     }
 
+
     private static class DownloadTask extends AsyncTask<Void, Void, Void> {
 
-        //FIX : The WeakReference allows the Activity to be garbage collected, so you don't have a memory leak.
-        // GC dose not protect the reference from begin collection and reclaim by the GC
+        /**
+         *  The WeakReference allows the Activity to be garbage collected.
+         *  garbage collected dose not protect the weak reference from begin reclaimed.
+         * **/
         private WeakReference<StaticAsyncTaskActivity> activity;
-
-        //MORE -> https://developer.android.com/reference/java/lang/ref/WeakReference.html
-
-        //Weak reference objects, which do not prevent their referents from being made finalizable, finalized, and then reclaimed.
-        //Weak references are most often used to implement canonicalizing mappings.
-        //Suppose that the garbage collector determines at a certain point in time that an object is weakly reachable.
-        //At that time it will atomically clear all weak references to that object and all weak references to any other weakly-reachable
-        //objects from which that object is reachable through a chain of strong and soft references. At the same time it will declare
-        //all of the formerly weakly-reachable objects to be finalizable. At the same time or at some later time it will enqueue
-        //those newly-cleared weak references that are registered with reference queues.
-
 
         private DownloadTask(StaticAsyncTaskActivity activity) {
             this.activity = new WeakReference<>(activity);
@@ -67,10 +79,8 @@ public class StaticAsyncTaskActivity extends Activity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            try {
+            if (activity.get() != null) {
                 activity.get().updateText();
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         }
     }

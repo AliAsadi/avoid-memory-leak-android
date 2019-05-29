@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Memory-Fixed</string>
+    <string name="hello">Hello, Leak!</string>
 </resources>

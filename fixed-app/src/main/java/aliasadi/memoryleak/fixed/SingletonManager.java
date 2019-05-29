@@ -16,14 +16,12 @@ public class SingletonManager {
 
     public synchronized static SingletonManager getInstance(Context context) {
         if (singleton == null) {
+            /**
+             * Use application Context to prevent leak.
+             * **/
             singleton = new SingletonManager(context.getApplicationContext());
         }
         return singleton;
-    }
-
-    public void destroy() {
-        context = null;
-        singleton = null;
     }
 
 }

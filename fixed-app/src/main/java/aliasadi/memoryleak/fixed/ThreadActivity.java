@@ -14,32 +14,40 @@ import aliasadi.memoryleak.fixed.R;
  */
 public class ThreadActivity extends Activity {
 
-    private MyThread myThread = new MyThread();
+    /**
+     * if the task done before to move to another activity
+     * or rotate the device every thing will works fine with out leak.
+     * **/
 
-    // NOTE : if the task done before to move to another activity or rotate the device every thing will works fine with out leak.
-
-    public static void start(Context context) {
-        Intent starter = new Intent(context, ThreadActivity.class);
-        context.startActivity(starter);
-    }
+    private DownloadTask thread = new DownloadTask();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello_world);
 
-        myThread.start();
+        thread.start();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // FIXED: kill the thread in activity onDestroy
-        myThread.interrupt();
+
+        /**
+         * Interrupts/stops this thread.
+         * **/
+        thread.interrupt();
     }
 
-    // FIXED: make it static. So it does not have referenced to the containing activity class
-    private static class MyThread extends Thread {
+    public static void start(Context context) {
+        Intent starter = new Intent(context, ThreadActivity.class);
+        context.startActivity(starter);
+    }
+
+    /**
+     * make it static so it does not have referenced to the containing activity class
+     * **/
+    private static class DownloadTask extends Thread {
         @Override
         public void run() {
             while (!isInterrupted()) {

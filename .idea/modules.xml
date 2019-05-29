@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/avoid-memory-leak-android.iml" filepath="$PROJECT_DIR$/avoid-memory-leak-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/fixed-app/fixed-app.iml" filepath="$PROJECT_DIR$/fixed-app/fixed-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/leak-app/leak-app.iml" filepath="$PROJECT_DIR$/leak-app/leak-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leakapp/leakapp.iml" filepath="$PROJECT_DIR$/leakapp/leakapp.iml" />
     </modules>
   </component>
 </project>

@@ -12,32 +12,20 @@ import aliasadi.memoryleak.fixed.R;
  */
 public class SingletonActivity extends Activity {
 
-    SingletonManager singletonFixed;
-
-    public static void start(Context context) {
-        Intent starter = new Intent(context, SingletonActivity.class);
-        context.startActivity(starter);
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello_world);
 
-        /**Leak **/
-        //If you referenced context directly and that reference happened to be an Activity or View or any context that not application context
-        //then you would have created a memory leak.
-
-        /**Fix **/
-        //You will not create a leak since you are only keeping a reference
-        //to the application context by calling getApplicationContext() on the construct.
-        singletonFixed = SingletonManager.getInstance(this);
-
+        /**
+         * Using application context instead (Take a a look at the @SingletonManager).
+         * **/
+        SingletonManager.getInstance(this);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // FIX2 : destroy it onDestroy.
-        singletonFixed.destroy();
+    public static void start(Context context) {
+        Intent starter = new Intent(context, SingletonActivity.class);
+        context.startActivity(starter);
     }
+
 }
