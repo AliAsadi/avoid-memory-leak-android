@@ -16,9 +16,9 @@ This project is all about shows common patterns of memory leaks in Android devel
 
  ## Screenshot
 <p align="center">
-<img src="https://i.imgur.com/M1XGg1e.png" height="500" width="270">
-<img src="https://i.imgur.com/2b31zYY.png" height="500" width="270">
-<img src="https://i.imgur.com/icylNzW.png" height="500" width="270">
+<img src="https://github.com/AliAsadi/avoid-memory-leak-android/blob/master/screenshot/fixed-app.png" height="500" width="270">
+<img src="https://github.com/AliAsadi/avoid-memory-leak-android/blob/master/screenshot/dump-memory.png" height="500" width="270">
+<img src="https://github.com/AliAsadi/avoid-memory-leak-android/blob/master/screenshot/leaks.png" height="500" width="270">
 </p>
 
 
