@@ -18,10 +18,10 @@ public class DownloadTask extends AsyncTask<Void, Void, Void> {
      *  The WeakReference allows the Activity to be garbage collected.
      *  garbage collected dose not protect the weak reference from begin reclaimed.
      * **/
-    private WeakReference<DownloadListener> activity;
+    private WeakReference<DownloadListener> listener;
 
     public DownloadTask(DownloadListener listener) {
-        activity = new WeakReference<>(listener);
+        this.listener = new WeakReference<>(listener);
     }
 
     @Override
@@ -38,8 +38,8 @@ public class DownloadTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        if (activity.get() != null) {
-            activity.get().onDownloadTaskDone();
+        if (listener.get() != null) {
+            listener.get().onDownloadTaskDone();
         }
     }
 }
