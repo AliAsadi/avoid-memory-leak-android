@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="aliasadi.memoryleak.fixed">
+
+    <application
+        android:name="aliasadi.memoryleak.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".asynctask.bestpractic.BestAsyncTaskActivity" />
+        <activity android:name=".asynctask.inner.AsyncTaskActivity" />
+        <activity android:name=".asynctask.StaticAsyncTaskActivity" />
+        <activity android:name=".thread.ThreadActivity" />
+        <activity android:name=".handler.HandlerActivity" />
+        <activity android:name=".singleton.SingletonActivity" />
+        <activity android:name="aliasadi.memoryleak.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

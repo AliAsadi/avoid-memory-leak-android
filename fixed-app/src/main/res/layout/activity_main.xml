@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:text="Fixed!"
+        android:textColor="#07B961" />
+
+    <Button
+        android:id="@+id/asyncTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/staticAsyncTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Static AsyncTask"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thread"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/singleton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Singleton"
+        android:textAllCaps="false" />
+
+
+
+</LinearLayout>
