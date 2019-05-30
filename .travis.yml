@@ -22,3 +22,9 @@ before_install:
 script:
   - ./gradlew leak-app:assembleRelease
 
+deploy:
+  provider: releases
+  api_key:
+    secure: 3c5f2179da3bea59b0273385614f64172e59ae08
+  file: app/build/outputs/apk/app-release.apk
+  skip_cleanup: true
