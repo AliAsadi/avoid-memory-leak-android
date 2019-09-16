@@ -1,8 +1,13 @@
 # avoid-memory-leak-android
 
 This project is all about shows common patterns of memory leaks in Android development and how to fix them
+                                                                                            
+                                                                                             
+[I've written a blog post about this project.]( https://proandroiddev.com/everything-you-need-to-know-about-memory-leaks-in-android-d7a59faaf46a )
+ 
 
  [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-avoid--memory--leak--android-green.svg?style=flat )]( https://android-arsenal.com/details/1/6887 )
+  [![](  https://img.shields.io/badge/Medium-Everything%20you%20need%20to%20know%20about%20Memory%20Leaks%20in%20Android.-lightgrey )]( https://proandroiddev.com/everything-you-need-to-know-about-memory-leaks-in-android-d7a59faaf46a )
    
  #### There is 2 seperated modules:  
  <img src="https://github.com/AliAsadi/avoid-memory-leak-android/blob/master/screenshot/modules.png"/>
