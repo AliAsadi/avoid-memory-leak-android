@@ -63,7 +63,7 @@ public class StaticAsyncTaskActivity extends Activity implements DownloadListene
 
         /**
          * The WeakReference allows the Activity to be garbage collected.
-         * garbage collected dose not protect the weak reference from begin reclaimed.
+         * garbage collected does not protect the weak reference from begin reclaimed.
          **/
         private WeakReference<DownloadListener> listener;
 
